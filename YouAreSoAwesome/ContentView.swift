@@ -8,12 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var encouragement = ""
     var body: some View {
+       
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            Text("\(encouragement)")
+                .font(.headline)
+                .fontWeight(.black)
+                .foregroundColor(Color.red)
+            HStack{
+                Button("Awesome") {
+                    encouragement = "You are Awesome"
+                }
+                .buttonStyle(.borderedProminent)
+                Button("Great") {
+                    encouragement = "You Are Great!"
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            
         }
         .padding()
     }
